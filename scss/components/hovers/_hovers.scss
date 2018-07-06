@@ -1,0 +1,122 @@
+// COLORS
+$yellow: #ffab40;
+
+
+
+
+
+
+
+
+// HOVER - Missing Corner
+
+// Mixins
+@mixin corner-lines {
+  background: $yellow;
+  display: block;
+  position: absolute;
+  transition: transform 250ms 250ms;
+}
+
+@mixin corner-lines-hover {
+  transform: none;
+  transition-delay: 0s;
+}
+
+.missing-corner {
+  background: $yellow;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-right: none;
+  border-color: $yellow;
+  color: $yellow;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 16px 68px 16px 32px;
+  position: relative;
+  transition: background 250ms, color 250ms;
+
+  &::before{
+    content: '';
+    @include corner-lines;
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    -ms-transform: scaleX(0.77);
+    transform: scaleX(0.77);
+    -ms-transform-origin: 0 1px;
+    transform-origin: 0 1px;
+    width: 100%;
+  }
+
+  &::after {
+    content: '';
+    @include corner-lines;
+    height: 100%;
+    right: 0;
+    top: 0;
+    -ms-transform: scaleY(0.6);
+    transform: scaleY(0.6);
+    -ms-transform-origin: 1px 0;
+    transform-origin: 1px 0;
+    width: 2px;
+  }
+
+  &:hover {
+    background: $yellow;
+    color: white;
+    transition-delay: 250ms;
+
+    &::before,
+    &::after {
+      @include corner-lines-hover;
+    }
+  }
+
+  &__right-arrow {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    transform: rotate(-90deg) translatez(0);
+    display: inline-block;
+    height: 18px;
+    left: auto;
+    vertical-align: middle;
+    color: inherit;
+    outline: none;
+    width: 40px;
+
+    &::before {
+      content: '';
+      background: currentColor;
+      bottom: 0;
+      display: block;
+      height: 100%;
+      left: 19px;
+      position: absolute;
+      transform-origin: 50% 100%;
+      width: 2px;
+    }
+
+    &::after {
+      content: '';
+      bottom: 2px;
+      height: 8px;
+      left: 13px;
+      width: 8px;
+      border-bottom: solid 2px currentColor;
+      border-right: solid 2px currentColor;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg) translatez(0);
+      -ms-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+    }
+  }
+}
