@@ -1,0 +1,46 @@
+$color1: black;
+$color2: yellow;
+
+html, body {
+	// Set up a background gradient for where you want the text to change colour
+  background: linear-gradient(to right, 
+  $color1 0%, 
+  $color1 50%, 
+  $color2 50%, 
+  $color2 100%);
+
+	height: 100%;
+}
+
+h1 {
+	color: black;
+	
+	// Setup a background
+  background: linear-gradient(to right, 
+  $color2 0%,   
+  $color2 50%, 
+  $color1 50%, 
+  $color1 100%);
+	
+	// Clip the background to the text
+	-webkit-background-clip: text;
+	// Remove the fill of the text
+	-webkit-text-fill-color: transparent;
+}
+
+
+h1 {
+	font-size: 15vw;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	text-decoration: underline;
+	width: 100%;
+	text-align: center;
+}
+
+h1::before {
+	text-decoration: underline;
+}
