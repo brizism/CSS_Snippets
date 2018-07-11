@@ -57,53 +57,106 @@
 ////////////////////////////////////
 ////////////////////////////////////
 
-$blue: #0091E5;
-$red: #E42149;
-$yellow: #FFF146;
-$bg: #fefee6;
+// $blue: #0091E5;
+// $red: #E42149;
+// $yellow: #FFF146;
+// $bg: #fefee6;
 
-$letter-spacing: -0.3rem;
+// $letter-spacing: -0.3rem;
+
+// html, body {
+// 	height: 100%;
+// 	background: $bg;
+//   	font-family: 'Amiro', sans-serif;
+// }
+
+// .wrapper {
+// 	margin: 0;
+// 	position: absolute;
+// 	transform-origin: bottom right;
+// 	right: 0;
+// 	bottom: 2%;
+
+// 	h1 {
+// 		color: $red;
+// 		text-transform: uppercase;
+// 		font-size: 18vw;
+// 		margin: 0;
+// 		position: relative;
+// 		line-height: 1;
+// 		letter-spacing: $letter-spacing;
+
+// 		&:before {
+// 			content: attr(data-heading);
+// 			position: absolute;
+// 			left: 0;
+// 			top: 0;
+// 			color: $yellow;
+// 			transform: translate(2.25%, 0);
+// 			mix-blend-mode: multiply;
+// 		}
+		
+// 		&:after {
+// 			content: attr(data-heading);
+// 			position: absolute;
+// 			left: 0;
+// 			top: 0;
+// 			color: $blue;
+// 			transform: translate(-2.25%, 0);
+// 			mix-blend-mode: multiply;
+// 		}
+// 	}
+// }
+
+
+
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+$color1: white;
+$color2: black;
 
 html, body {
-	height: 100%;
-	background: $bg;
-  	font-family: 'Amiro', sans-serif;
 }
 
-.wrapper {
-	margin: 0;
-	position: absolute;
-	transform-origin: bottom right;
-	right: 0;
-	bottom: 2%;
+h1 {
+	background: linear-gradient(to right, #ff050f, #ffc220, #ffea33);
+	background-size: 400% 400%;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	width: 100%;
+	text-align: center;
+	animation: Gradient 2s ease infinite;
+}
 
-	h1 {
-		color: $red;
-		text-transform: uppercase;
-		font-size: 18vw;
-		margin: 0;
-		position: relative;
-		line-height: 1;
-		letter-spacing: $letter-spacing;
-
-		&:before {
-			content: attr(data-heading);
-			position: absolute;
-			left: 0;
-			top: 0;
-			color: $yellow;
-			transform: translate(2.25%, 0);
-			mix-blend-mode: multiply;
-		}
-		
-		&:after {
-			content: attr(data-heading);
-			position: absolute;
-			left: 0;
-			top: 0;
-			color: $blue;
-			transform: translate(-2.25%, 0);
-			mix-blend-mode: multiply;
-		}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
 	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+
+
+
+/* Not needed for demo */
+html, body {
+	height: 100%;
+}
+
+h1 {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+	font-size: 13vw;
+	margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
