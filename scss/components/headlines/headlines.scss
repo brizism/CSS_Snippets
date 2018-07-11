@@ -1,46 +1,109 @@
-$color1: black;
-$color2: yellow;
+// $color1: black;
+// $color2: yellow;
+
+// html, body {
+// 	// Set up a background gradient for where you want the text to change colour
+//   background: linear-gradient(to right, 
+//   $color1 0%, 
+//   $color1 50%, 
+//   $color2 50%, 
+//   $color2 100%);
+
+// 	height: 100%;
+// }
+
+// h1 {
+// 	color: black;
+	
+// 	// Setup a background
+//   background: linear-gradient(to right, 
+//   $color2 0%,   
+//   $color2 50%, 
+//   $color1 50%, 
+//   $color1 100%);
+	
+// 	// Clip the background to the text
+// 	-webkit-background-clip: text;
+// 	// Remove the fill of the text
+// 	-webkit-text-fill-color: transparent;
+// }
+
+
+// h1 {
+// 	font-size: 15vw;
+// 	top: 50%;
+// 	left: 50%;
+// 	margin: 0;
+// 	transform: translate(-50%, -50%);
+// 	position: absolute;
+// 	text-decoration: underline;
+// 	width: 100%;
+// 	text-align: center;
+// }
+
+// h1::before {
+// 	text-decoration: underline;
+// }
+
+
+
+
+
+
+
+
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+
+$blue: #0091E5;
+$red: #E42149;
+$yellow: #FFF146;
+$bg: #fefee6;
+
+$letter-spacing: -0.3rem;
 
 html, body {
-	// Set up a background gradient for where you want the text to change colour
-  background: linear-gradient(to right, 
-  $color1 0%, 
-  $color1 50%, 
-  $color2 50%, 
-  $color2 100%);
-
 	height: 100%;
+	background: $bg;
+  	font-family: 'Amiro', sans-serif;
 }
 
-h1 {
-	color: black;
-	
-	// Setup a background
-  background: linear-gradient(to right, 
-  $color2 0%,   
-  $color2 50%, 
-  $color1 50%, 
-  $color1 100%);
-	
-	// Clip the background to the text
-	-webkit-background-clip: text;
-	// Remove the fill of the text
-	-webkit-text-fill-color: transparent;
-}
-
-
-h1 {
-	font-size: 15vw;
-	top: 50%;
-	left: 50%;
+.wrapper {
 	margin: 0;
-	transform: translate(-50%, -50%);
 	position: absolute;
-	text-decoration: underline;
-	width: 100%;
-	text-align: center;
-}
+	transform-origin: bottom right;
+	right: 0;
+	bottom: 2%;
 
-h1::before {
-	text-decoration: underline;
+	h1 {
+		color: $red;
+		text-transform: uppercase;
+		font-size: 18vw;
+		margin: 0;
+		position: relative;
+		line-height: 1;
+		letter-spacing: $letter-spacing;
+
+		&:before {
+			content: attr(data-heading);
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: $yellow;
+			transform: translate(2.25%, 0);
+			mix-blend-mode: multiply;
+		}
+		
+		&:after {
+			content: attr(data-heading);
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: $blue;
+			transform: translate(-2.25%, 0);
+			mix-blend-mode: multiply;
+		}
+	}
 }
